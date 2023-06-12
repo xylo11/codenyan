@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start() Javascriptのイベント発火を確実にするため無効化
 require("@rails/activestorage").start()
 require("channels")
 
