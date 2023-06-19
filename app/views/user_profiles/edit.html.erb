@@ -1,0 +1,24 @@
+<h1>Edit Profile</h1>
+
+<%= form_with(model: @user_profile, local: true) do |form| %>
+  <%= render 'errors', object: @user_profile %>
+
+  <div class="field">
+    <%= form.label :nickname %>
+    <%= form.text_field :nickname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :intro %>
+    <%= form.text_area :intro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
