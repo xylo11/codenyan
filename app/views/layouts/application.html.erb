@@ -11,6 +11,7 @@
 
   <body>
     <% if user_signed_in? %>
+      <%= link_to 'プロフィール', edit_user_profile_path, class: 'button' %>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
       <%= link_to '登録情報編集', edit_user_registration_path %>
     <% else %>

@@ -1,7 +1,7 @@
 <h1>Edit Profile</h1>
 
 <%= form_with(model: @user_profile, local: true) do |form| %>
-  <%= render 'errors', object: @user_profile %>
+  <%= render 'user_profiles/errors', object: @user_profile %>
 
   <div class="field">
     <%= form.label :nickname %>
