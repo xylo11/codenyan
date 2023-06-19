@@ -15,7 +15,15 @@
 
   <div class="field">
     <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
+    <%= form.file_field :avatar, onchange: "previewAvatar(this)" %>
+    <div id="current-avatar-preview">
+      <% if @user_profile.avatar.attached? %>
+        <%= image_tag @user_profile.avatar.variant(resize_to_limit: [150, 150]), id: "current-avatar" %>
+      <% else %>
+        <p>No current avatar</p>
+      <% end %>
+    </div>
+    <div id="new-avatar-preview"></div>
   </div>
 
   <div class="actions">
