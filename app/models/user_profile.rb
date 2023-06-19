@@ -2,6 +2,7 @@ class UserProfile < ApplicationRecord
   belongs_to :user
   has_one_attached :avatar
 
+  validates :nickname, presence: true
   validate :avatar_size_and_format
 
   private
