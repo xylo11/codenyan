@@ -7,10 +7,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'avatar_preview' %>
   </head>
 
   <body>
     <% if user_signed_in? %>
+      <%= link_to 'プロフィール', edit_user_profile_path, class: 'button' %>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
       <%= link_to '登録情報編集', edit_user_registration_path %>
     <% else %>
