@@ -14,7 +14,6 @@ class User < ApplicationRecord
   private
 
   def create_user_profile
-    self.create_user_profile!(nickname: self.username)
+    create_user_profile!(nickname: username)
   end
-  
 end
