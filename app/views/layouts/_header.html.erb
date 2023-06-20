@@ -5,13 +5,18 @@
         <% end %>
     </div>
     <div class="header__dropdown">
-        <button class="dropdown-button"><%= @current_park_name || "Home" %></button>
-        <div class="dropdown-content" style="display: none;">
-          <!-- ここにドロップダウンメニューのコンテンツを配置します -->
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
+      <button class="dropdown-button"><%= @current_park_name || "Home" %></button>
+      <div id="dropdown-content" class="dropdown-content" style="display: none;">
+        <% if user_signed_in? %>
+          <%= link_to 'パーク作成', new_park_path, class: 'dropdown-item' %>
+          <% current_user.parks.each do |park| %>
+            <%= link_to park.name, park_path(park), class: 'dropdown-item' %>
+          <% end %>
+          <%= link_to 'ユーザー設定', edit_user_registration_path, class: 'dropdown-item' %>
+          <%= link_to 'プロフィール', edit_user_profile_path, class: 'dropdown-item' %>
+        <% end %>
+        <%= link_to 'Home', root_path, class: 'dropdown-item' %>
+      </div>
     </div>
     <div class="header__search">
         <%= form_with url: "/search", method: :get, html: { class: "search-form" } do |f| %>
@@ -24,13 +29,16 @@
         <i class="fas fa-bell"></i>
     </div>
     <div class="header__profile">
-        <% if user_signed_in? %>
+      <% if user_signed_in? && current_user.user_profile %>
+        <% if current_user.user_profile.avatar.attached? %>
           <%= image_tag current_user.user_profile.avatar, alt: "User avatar" %>
-          <span><%= current_user.user_profile.nickname %></span>
-          <!-- dropdown content here -->
         <% else %>
-          <span>Guest</span>
-          <!-- dropdown content here -->
+          <%= image_tag 'default_avatar.png', alt: "Default avatar" %>
         <% end %>
+        <span><%= current_user.user_profile.nickname %></span>
+        <!-- dropdown content here -->
+      <% else %>
+        <!-- Handle non-logged in or profile-less state here -->
+      <% end %>
     </div>
 </header>

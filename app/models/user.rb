@@ -8,8 +8,10 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は半角英数字混合で入力してください' }
 
   has_one :user_profile, dependent: :destroy
-
   after_create :create_user_profile
+  has_many :park_users
+  has_many :parks, through: :park_users
+  has_many :created_parks, class_name: 'Park', foreign_key: 'user_id'
 
   private
 
