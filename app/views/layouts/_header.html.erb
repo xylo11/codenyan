@@ -1,21 +1,30 @@
 <header class="header">
     <div class="header__logo">
-        <img src="path_to_your_logo" alt="Codenyan logo" />
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png", alt: "Codenyan logo" %>
+        <% end %>
     </div>
     <div class="header__dropdown">
-        <button class="dropdown-button">Current Location</button>
+        <button class="dropdown-button"><%= @current_park_name || "Home" %></button>
         <!-- dropdown content here -->
     </div>
     <div class="header__search">
-        <input type="text" placeholder="Search..." />
+        <%= form_with url: "/search", method: :get, local: true do |f| %>
+            <%= f.text_field :q, placeholder: "Search..." %>
+        <% end %>
     </div>
     <div class="header__icons">
         <i class="fas fa-comment-dots"></i>
         <i class="fas fa-bell"></i>
     </div>
     <div class="header__profile">
-        <img src="path_to_avatar" alt="User avatar" />
-        <span>User Name</span>
-        <!-- dropdown content here -->
+        <% if user_signed_in? %>
+          <%= image_tag current_user.user_profile.avatar, alt: "User avatar" %>
+          <span><%= current_user.username %></span>
+          <!-- dropdown content here -->
+        <% else %>
+          <span>Guest</span>
+          <!-- dropdown content here -->
+        <% end %>
     </div>
 </header>

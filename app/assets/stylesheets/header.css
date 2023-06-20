@@ -7,21 +7,30 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
-  padding: 0 10px;
+  height: 70px;
+  padding: 0 5px;
   border-bottom: 1px solid #808080;
 }
 
-.header__logo img,
+.header__logo img{
+  height: 60px;
+  width: 150px;
+}
+
 .header__profile img {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 
+.dropdown-button {
+  width: 150px;
+  height: 35px;
+}
+
 .header__search input {
-  width: 200px;
-  height: 30px;
+  width: 250px;
+  height: 35px;
 }
 
 .header__icons i {
@@ -30,4 +39,5 @@ body {
 
 .header__profile span {
   margin-left: 5px;
+  margin-right: 10px;
 }
