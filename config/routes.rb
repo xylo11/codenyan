@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resource :user_profile, only: [:edit, :update]
   resources :parks
+  get '/search', to: 'application#search'
 end

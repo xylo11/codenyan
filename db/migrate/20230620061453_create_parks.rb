@@ -3,6 +3,7 @@ class CreateParks < ActiveRecord::Migration[6.0]
     create_table :parks do |t|
       t.string :name, null: false
       t.text :info
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

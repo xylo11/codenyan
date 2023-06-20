@@ -6,12 +6,18 @@
     </div>
     <div class="header__dropdown">
         <button class="dropdown-button"><%= @current_park_name || "Home" %></button>
-        <!-- dropdown content here -->
+        <div class="dropdown-content" style="display: none;">
+          <!-- ここにドロップダウンメニューのコンテンツを配置します -->
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
     </div>
     <div class="header__search">
-        <%= form_with url: "/search", method: :get, local: true do |f| %>
+        <%= form_with url: "/search", method: :get, html: { class: "search-form" } do |f| %>
             <%= f.text_field :q, placeholder: "Search..." %>
         <% end %>
+        <div id="search-results" style="display: none;"></div>
     </div>
     <div class="header__icons">
         <i class="fas fa-comment-dots"></i>
@@ -20,7 +26,7 @@
     <div class="header__profile">
         <% if user_signed_in? %>
           <%= image_tag current_user.user_profile.avatar, alt: "User avatar" %>
-          <span><%= current_user.username %></span>
+          <span><%= current_user.user_profile.nickname %></span>
           <!-- dropdown content here -->
         <% else %>
           <span>Guest</span>
