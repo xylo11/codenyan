@@ -3,6 +3,10 @@ class ParksController < ApplicationController
   before_action :set_park, only: [:show, :edit, :update, :destroy]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
+  def index
+    @parks = Park.all
+  end
+
   def new
     @park = current_user.created_parks.build
   end
@@ -65,6 +69,6 @@ class ParksController < ApplicationController
   end
 
   def park_params
-    params.require(:park).permit(:name)
+    params.require(:park).permit(:name, :info)
   end
 end
