@@ -1,0 +1,14 @@
+<div class="park-header">
+  <h1><%= @park.name %></h1>
+  <button id="join-leave-btn" data-park-id="<%= @park.id %>" class="join-leave-btn">
+    <% if @park.users.include?(current_user) %>
+      Leave
+    <% else %>
+      Join
+    <% end %>
+  </button>
+  <% if @park.user == current_user %>
+    <%= link_to 'Edit', edit_park_path(@park), class: 'btn' %>
+    <button id="delete-park-btn" class="btn">Delete</button>
+  <% end %>
+</div>

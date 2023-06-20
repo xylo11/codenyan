@@ -1,0 +1,14 @@
+<%= form_with(model: @park) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :info %>
+    <%= form.text_area :info %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Update" %>
+    <%= button_to 'Delete', @park, method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+<% end %>

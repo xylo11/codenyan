@@ -1,6 +1,6 @@
 class ParksController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_park, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_park, only: [:show, :edit, :update, :destroy, :join, :leave]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
@@ -37,20 +37,18 @@ class ParksController < ApplicationController
   end
 
   def join
-    @park = Park.find(params[:id])
     if @park.users.include?(current_user)
       render json: { error: 'Already joined' }, status: :unprocessable_entity
     else
       @park.users << current_user
-      render json: { success: 'Joined the park' }
+      redirect_to @park, notice: 'Joined the park'
     end
   end
 
   def leave
-    @park = Park.find(params[:id])
     if @park.users.include?(current_user)
       @park.users.delete(current_user)
-      render json: { success: 'Left the park' }
+      redirect_to @park, notice: 'Left the park'
     else
       render json: { error: 'Not a member' }, status: :unprocessable_entity
     end
