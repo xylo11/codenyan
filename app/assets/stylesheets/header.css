@@ -1,0 +1,33 @@
+body {
+  background-color: #000000ee;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 10px;
+  border-bottom: 1px solid #808080;
+}
+
+.header__logo img,
+.header__profile img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.header__search input {
+  width: 200px;
+  height: 30px;
+}
+
+.header__icons i {
+  margin-left: 10px;
+}
+
+.header__profile span {
+  margin-left: 5px;
+}

@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
     <% if user_signed_in? %>
       <%= link_to 'プロフィール', edit_user_profile_path, class: 'button' %>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
