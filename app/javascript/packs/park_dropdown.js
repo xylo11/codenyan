@@ -15,4 +15,24 @@ document.addEventListener('DOMContentLoaded', function() {
       dropdownContent.style.display = "none";
     }
   });
+
+  const searchInput = document.querySelector('#search');
+  searchInput.addEventListener('keyup', searchFunction);
 });
+
+function searchFunction() {
+  let input, filter, dropdown, items, item, i, txtValue;
+  input = document.getElementById('search');
+  filter = input.value.toUpperCase();
+  dropdown = document.getElementById('dropdown-content');
+  items = dropdown.getElementsByClassName('dropdown-item');
+  for (i = 0; i < items.length; i++) {
+    item = items[i];
+    txtValue = item.textContent || item.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      items[i].style.display = '';
+    } else {
+      items[i].style.display = 'none';
+    }
+  }
+}
