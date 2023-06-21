@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :park do
-    name { "MyString" }
-    info { "MyText" }
+    name { Faker::Lorem.word }
+    association :user
   end
 end
