@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_20_062436) do
+ActiveRecord::Schema.define(version: 2023_06_21_101547) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -51,6 +51,20 @@ ActiveRecord::Schema.define(version: 2023_06_20_062436) do
     t.index ["user_id"], name: "index_parks_on_user_id"
   end
 
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "upvotes"
+    t.integer "downvotes"
+    t.integer "bookmark_counts"
+    t.bigint "user_id", null: false
+    t.bigint "park_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["park_id"], name: "index_posts_on_park_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.text "intro"
@@ -78,5 +92,7 @@ ActiveRecord::Schema.define(version: 2023_06_20_062436) do
   add_foreign_key "park_users", "parks"
   add_foreign_key "park_users", "users"
   add_foreign_key "parks", "users"
+  add_foreign_key "posts", "parks"
+  add_foreign_key "posts", "users"
   add_foreign_key "user_profiles", "users"
 end
