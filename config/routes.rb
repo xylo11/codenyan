@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
   get 'posts/index'
   root to: "posts#index"
+  resources :users, only: [:show]
   resource :user_profile, only: [:edit, :update]
   resources :posts, only: [:new, :create, :show]
   resources :parks do
