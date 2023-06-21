@@ -1,6 +1,4 @@
 <div class="user-detail">
-  <%= render 'users/profile', user: @user %>
-
   <div class="posts">
     <% @user.posts.order(created_at: :desc).each do |post| %>
       <div class="post">
@@ -25,4 +23,6 @@
       </div>
     <% end %>
   </div>
+
+  <%= render 'users/profile', user: @user %>
 </div>

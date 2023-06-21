@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :users, only: [:show]
   resource :user_profile, only: [:edit, :update]
-  resources :posts, only: [:new, :create, :show]
+  resources :posts, only: [:new, :create, :show] do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :parks do
     member do
       post :join
