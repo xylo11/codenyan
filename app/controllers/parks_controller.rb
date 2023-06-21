@@ -12,7 +12,7 @@ class ParksController < ApplicationController
   end
 
   def create
-    @park = current_user.created_parks.build(park_params)
+    @park = current_user.created_parks.build(create_park_params)
     if @park.save
       redirect_to @park, notice: 'Park was successfully created.'
     else
@@ -24,7 +24,7 @@ class ParksController < ApplicationController
   end
 
   def update
-    if @park.update(park_params)
+    if @park.update(update_park_params)
       redirect_to @park, notice: 'Park was successfully updated.'
     else
       render :edit
@@ -32,8 +32,9 @@ class ParksController < ApplicationController
   end
 
   def destroy
+    @park.park_users.destroy_all
     @park.destroy
-    redirect_to parks_url, notice: 'Park was successfully destroyed.'
+    redirect_to root_url, notice: 'Park was successfully destroyed.'
   end
 
   def join
@@ -41,14 +42,14 @@ class ParksController < ApplicationController
       render json: { error: 'Already joined' }, status: :unprocessable_entity
     else
       @park.users << current_user
-      redirect_to @park, notice: 'Joined the park'
+      render json: { success: 'Joined the park' }
     end
   end
-
+  
   def leave
     if @park.users.include?(current_user)
       @park.users.delete(current_user)
-      redirect_to @park, notice: 'Left the park'
+      render json: { success: 'Left the park' }
     else
       render json: { error: 'Not a member' }, status: :unprocessable_entity
     end
@@ -61,12 +62,16 @@ class ParksController < ApplicationController
   end
 
   def ensure_correct_user
-    if @park.user != current_user
+    if @park.user.nil? || @park.user != current_user
       redirect_to parks_path, alert: 'You are not authorized.'
     end
   end
 
-  def park_params
+  def create_park_params
     params.require(:park).permit(:name, :info)
+  end
+
+  def update_park_params
+    params.require(:park).permit(:info)
   end
 end

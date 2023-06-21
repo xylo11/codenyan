@@ -1,5 +1,13 @@
 <h1>新規パーク作成</h1>
 
-<%= render "form" %>
+<%= form_with(model: @park, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :info %>
+  <%= form.text_area :info %>
+
+  <%= form.submit "作成" %>
+<% end %>
 
 <%= link_to "キャンセル", parks_path %>

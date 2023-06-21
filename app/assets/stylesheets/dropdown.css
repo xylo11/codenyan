@@ -1,6 +1,7 @@
 .header__dropdown {
   position: relative;
   display: inline-block;
+  text-align: center;
 }
 
 .dropdown-content {
@@ -21,4 +22,8 @@
 
 .dropdown-content .dropdown-item:hover {
   background-color: #f1f1f1;
+}
+
+.dropdown-section-title {
+  color: grey;
 }

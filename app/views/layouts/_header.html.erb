@@ -7,12 +7,16 @@
     <div class="header__dropdown">
       <button class="dropdown-button"><%= @current_park_name || "Home" %></button>
       <div id="dropdown-content" class="dropdown-content" style="display: none;">
-        <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search..">
+        <input type="text" id="search" placeholder="Filter">
+        <div class="dropdown-section-title">YOUR PARKS</div>
+        <%= link_to 'パーク作成', new_park_path, class: 'dropdown-item' %>
         <% if user_signed_in? %>
-          <%= link_to 'パーク作成', new_park_path, class: 'dropdown-item' %>
           <% current_user.parks.each do |park| %>
             <%= link_to park.name, park_path(park), class: 'dropdown-item' %>
           <% end %>
+        <% end %>
+        <div class="dropdown-section-title">OTHER</div>
+        <% if user_signed_in? %>
           <%= link_to 'ユーザー設定', edit_user_registration_path, class: 'dropdown-item' %>
           <%= link_to 'プロフィール', edit_user_profile_path, class: 'dropdown-item' %>
         <% end %>
@@ -26,8 +30,8 @@
         <div id="search-results" style="display: none;"></div>
     </div>
     <div class="header__icons">
-        <i class="fas fa-comment-dots"></i>
-        <i class="fas fa-bell"></i>
+        <i class="fas fa-comment-dots" style="background-image: url('<%= asset_path 'talk-icon.png' %>')"></i> <!-- talk functionality to be implemented -->
+        <i class="fas fa-bell" style="background-image: url('<%= asset_path 'notification-icon.png' %>')"></i> <!-- notification functionality to be implemented -->
     </div>
     <div class="header__profile">
       <% if user_signed_in? && current_user.user_profile %>
@@ -37,9 +41,17 @@
           <%= image_tag 'default_avatar.png', alt: "Default avatar" %>
         <% end %>
         <span><%= current_user.user_profile.nickname %></span>
-        <!-- dropdown content here -->
       <% else %>
-        <!-- Handle non-logged in or profile-less state here -->
+        <%= image_tag 'default_avatar.png', alt: "Guest avatar" %>
+        <span>Guest</span>
+      <% end %>
+    </div>
+    <div class="header__auth">
+      <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_registration_path %>
+        <%= link_to 'Login', new_user_session_path %>
       <% end %>
     </div>
 </header>

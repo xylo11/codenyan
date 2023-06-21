@@ -9,6 +9,6 @@
   </button>
   <% if @park.user == current_user %>
     <%= link_to 'Edit', edit_park_path(@park), class: 'btn' %>
-    <button id="delete-park-btn" class="btn">Delete</button>
+    <%= link_to 'Delete', park_path(@park), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %>
   <% end %>
 </div>

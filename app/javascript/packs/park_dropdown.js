@@ -2,12 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const dropdownButton = document.querySelector('.dropdown-button');
   const dropdownContent = document.querySelector('#dropdown-content');
 
-  dropdownButton.addEventListener('click', function() {
+  dropdownButton.addEventListener('click', function(event) {
+    event.stopPropagation();  // 追加
     if (dropdownContent.style.display === "none") {
       dropdownContent.style.display = "block";
     } else {
       dropdownContent.style.display = "none";
     }
+  });
+
+  dropdownContent.addEventListener('click', function(event) {  // 追加
+    event.stopPropagation();  // 追加
   });
 
   window.addEventListener('click', function(event) {
