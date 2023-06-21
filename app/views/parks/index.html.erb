@@ -1,0 +1,5 @@
+<div id="park-dropdown" class="park-dropdown">
+  <% @parks.each do |park| %>
+    <%= link_to park.name, park_path(park) %>
+  <% end %>
+</div>

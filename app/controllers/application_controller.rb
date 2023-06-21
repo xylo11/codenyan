@@ -2,6 +2,21 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def search
+    query = params[:q]
+    @posts = Post.where('title LIKE ?', "%#{query}%")
+    @users = User.where('name LIKE ?', "%#{query}%")
+    @parks = Park.where('name LIKE ?', "%#{query}%")
+
+    @results = {
+      posts: @posts,
+      users: @users,
+      parks: @parks
+    }
+
+    render json: @results
+  end
+
   private
 
   def basic_auth

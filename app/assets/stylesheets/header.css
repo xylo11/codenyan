@@ -1,0 +1,61 @@
+body {
+  background-color: #000000ee;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 5px;
+  border-bottom: 1px solid #808080;
+}
+
+.header__logo img{
+  height: 60px;
+  width: 150px;
+}
+
+.header__profile img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.dropdown-button {
+  width: 194px;
+  height: 35px;
+}
+
+.header__search input {
+  width: 250px;
+  height: 35px;
+}
+
+.header__icons i {
+  margin-left: 10px;
+}
+
+.header__profile {
+  display: flex;
+  align-items: center;
+}
+
+.header__profile span {
+  margin-left: 5px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.header__icons img {
+  width: 30px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.header__auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
