@@ -1,3 +1,51 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-detail {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  
+  .profile {
+    width: 300px;
+    height: 500px;
+    margin-right: 40px;
+    /* Add styles for profile box */
+  }
+
+  .posts {
+    width: 640px;
+
+    .post {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      .post-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        
+        .post-park, .post-user {
+          font-size: 14px;
+          color: #333;
+        }
+      }
+
+      .post-title {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .post-content {
+        font-size: 16px;
+        color: #666;
+      }
+
+      .comments {
+        margin-top: 20px;
+        /* Add styles for comments */
+      }
+    }
+  }
+}
