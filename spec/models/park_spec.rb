@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Park, type: :model do
   let(:user) { create(:user) }
-  
+
   describe 'パーク作成' do
     context 'パーク作成が成功する場合' do
       it '名前が存在すれば作成できる' do
@@ -21,7 +21,7 @@ RSpec.describe Park, type: :model do
       it 'ユーザーが関連付けられていないと作成できない' do
         park = build(:park, user: nil)
         park.valid?
-        expect(park.errors[:user]).to include("must exist")
+        expect(park.errors[:user]).to include('must exist')
       end
     end
   end

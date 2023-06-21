@@ -7,16 +7,16 @@ class ApplicationController < ActionController::Base
     @posts = Post.where('title LIKE ?', "%#{query}%")
     @users = User.where('name LIKE ?', "%#{query}%")
     @parks = Park.where('name LIKE ?', "%#{query}%")
-    
+
     @results = {
       posts: @posts,
       users: @users,
       parks: @parks
     }
-    
+
     render json: @results
   end
-  
+
   private
 
   def basic_auth

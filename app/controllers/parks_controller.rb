@@ -45,7 +45,7 @@ class ParksController < ApplicationController
       render json: { success: 'Joined the park' }
     end
   end
-  
+
   def leave
     if @park.users.include?(current_user)
       @park.users.delete(current_user)
@@ -62,9 +62,9 @@ class ParksController < ApplicationController
   end
 
   def ensure_correct_user
-    if @park.user.nil? || @park.user != current_user
-      redirect_to parks_path, alert: 'You are not authorized.'
-    end
+    return unless @park.user.nil? || @park.user != current_user
+
+    redirect_to parks_path, alert: 'You are not authorized.'
   end
 
   def create_park_params
