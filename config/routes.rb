@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'posts/index'
   root to: "posts#index"
   resource :user_profile, only: [:edit, :update]
+  resources :posts, only: [:new, :create, :show]
   resources :parks do
     member do
       post :join

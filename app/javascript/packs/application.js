@@ -7,6 +7,8 @@ require("@rails/ujs").start()
 // require("turbolinks").start()  // コメントアウトされています
 require("@rails/activestorage").start()
 require("channels")
+require("@rails/activestorage").start()
+require("packs/post_park_dropdown")
 //= require jquery
 //= require jquery_ujs
 
