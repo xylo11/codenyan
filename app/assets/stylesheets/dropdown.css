@@ -27,3 +27,8 @@
 .dropdown-section-title {
   color: grey;
 }
+
+#search {
+  height: 35px;
+  text-align: center;
+}

@@ -30,8 +30,8 @@
         <div id="search-results" style="display: none;"></div>
     </div>
     <div class="header__icons">
-        <i class="fas fa-comment-dots" style="background-image: url('<%= asset_path 'talk-icon.png' %>')"></i> <!-- talk functionality to be implemented -->
-        <i class="fas fa-bell" style="background-image: url('<%= asset_path 'notification-icon.png' %>')"></i> <!-- notification functionality to be implemented -->
+        <a href="#"><img src="<%= asset_path 'talk-icon.png' %>" alt="Talk Icon"></a> <!-- talk functionality to be implemented -->
+        <a href="#"><img src="<%= asset_path 'notification-icon.png' %>" alt="Notification Icon"></a> <!-- notification functionality to be implemented -->
     </div>
     <div class="header__profile">
       <% if user_signed_in? && current_user.user_profile %>
