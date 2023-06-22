@@ -4,6 +4,7 @@ body {
 }
 
 .header {
+  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,12 +15,12 @@ body {
 
 .header__logo img{
   height: 60px;
-  width: 150px;
+  width: auto;
 }
 
 .header__profile img {
   height: 50px;
-  width: 50px;
+  width: auto;
   border-radius: 50%;
 }
 

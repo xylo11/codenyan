@@ -40,7 +40,7 @@
         <% else %>
           <%= image_tag 'default_avatar.png', alt: "Default avatar" %>
         <% end %>
-        <span><%= current_user.user_profile.nickname %></span>
+        <span><%= current_user.username %></span>
       <% else %>
         <%= image_tag 'default_avatar.png', alt: "Guest avatar" %>
         <span>Guest</span>
