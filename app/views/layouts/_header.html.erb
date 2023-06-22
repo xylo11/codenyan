@@ -18,7 +18,7 @@
         <div class="dropdown-section-title">OTHER</div>
         <% if user_signed_in? %>
           <%= link_to 'ユーザー設定', edit_user_registration_path, class: 'dropdown-item' %>
-          <%= link_to 'プロフィール', edit_user_profile_path, class: 'dropdown-item' %>
+          <%= link_to 'プロフィール設定', edit_user_profile_path, class: 'dropdown-item' %>
         <% end %>
         <%= link_to 'Home', root_path, class: 'dropdown-item' %>
       </div>
