@@ -24,3 +24,15 @@ $.ajaxSetup({
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
   }
 });
+
+import ClassicEditor from './ckeditor.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const editorElement = document.querySelector('#editor');
+  if (editorElement) {
+    ClassicEditor.create(editorElement)
+      .catch(error => {
+        console.error(error);
+      });
+  }
+});
