@@ -24,14 +24,14 @@
       <span id="title-count">0/300</span>
     </div>
 
-    <div class="post-field">
-      <%= form.text_area :content, id: 'editor' %>
+    <div class="post-field" style="width: 800px;">
+      <%= form.text_area :content, id: 'editor', class: 'post-textarea' %>
     </div>
 
-    <div class="actions">
-      <%= form.submit %>
+    <div class="actions post-create">
+      <%= form.submit 'Post', class: 'post-btn' %>
     </div>
   <% end %>
 
-  <%= link_to 'Back', root_path %>
+  <%= link_to 'Home', root_path %>
 </div>

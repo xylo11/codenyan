@@ -33,6 +33,21 @@ h1 {
   right: 4px;
 }
 
-.post-field {
-  font-size: 20px;
+.post-create {
+  text-align: right;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.post-btn {
+  color: #000;
+  background-color: #989898;
+  border-bottom: 5px solid #cecece;
+}
+
+.post-btn:hover {
+  margin-top: 3px;
+  color: #000;
+  background: #898989;
+  border-bottom: 2px solid #cecece;
 }
