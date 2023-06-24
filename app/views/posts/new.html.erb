@@ -14,18 +14,16 @@
       </div>
     <% end %>
 
-    <div class="form-group">
+    <div class="post-park">
       <%= form.label :park_id, "Park" %>
       <%= form.collection_select :park_id, Park.all, :id, :name, {}, { class: "form-control", id: "post-park-dropdown" } %>
     </div>
 
-    <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title %>
+    <div class="post-title">
+      <%= form.text_field :title, placeholder: 'Title' %>
     </div>
 
-    <div class="field">
-      <%= form.label :content %>
+    <div class="post-field">
       <%= form.text_area :content, id: 'editor' %>
     </div>
 
