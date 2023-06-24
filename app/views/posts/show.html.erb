@@ -1,7 +1,9 @@
 <h2><%= link_to @post.park.name, @post.park %></h2>
 <p>Posted by <%= link_to @post.user.username, @post.user %> <%= time_ago_in_words(@post.created_at) %> ago</p>
 <h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
+<div class="post-content">
+  <%= markdown(@post.content) %>
+</div>
 
 <%# The comment form, to be implemented later %>
 <div class="comment-form">
