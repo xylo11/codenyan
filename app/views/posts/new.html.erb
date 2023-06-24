@@ -20,7 +20,8 @@
     </div>
 
     <div class="post-title">
-      <%= form.text_area :title, placeholder: 'Title', rows: 1 %>
+      <%= form.text_area :title, placeholder: 'Title', rows: 1, maxlength: 300, id: 'title-input' %>
+      <span id="title-count">0/300</span>
     </div>
 
     <div class="post-field">
