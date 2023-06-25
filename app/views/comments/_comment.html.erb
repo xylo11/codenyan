@@ -1,11 +1,17 @@
-<div class="comment">
-  <strong><%= comment.user.username %></strong> said:
-  <p><%= comment.content %></p>
-  <% if comment.commentable.is_a?(Post) %>
-    <%= link_to 'Edit', edit_comment_path(comment) %> |
-    <%= link_to 'Delete Comment', comment_path(comment), method: :delete %>
-  <% else %>
-    <%= link_to 'Edit', edit_comment_comment_path(comment.commentable, comment) %> |
-    <%= link_to 'Delete Comment', comment_comment_path(comment.commentable, comment), method: :delete %>
-  <% end %>
+<div class="comment" id="comment-<%= comment.id %>">
+  <div class="comment_content">
+    <strong><%= comment.user.username %></strong> said:
+    <p><%= comment.content %></p>
+    <% if comment.commentable.is_a?(Post) %>
+      <%= link_to 'Edit', '#', class: 'edit_comment' %> |
+      <%= link_to 'Delete Comment', comment_path(comment), method: :delete, remote: true, data: {confirm: 'Are you sure?'} %>
+    <% else %>
+      <%= link_to 'Edit', '#', class: 'edit_comment' %> |
+      <%= link_to 'Delete Comment', reply_path(comment.commentable, comment), method: :delete, remote: true, data: {confirm: 'Are you sure?'} %>
+    <% end %>
+  </div>
+  
+  <div class="edit_comment_form" style="display: none;">
+    <%= render 'comments/form', comment: comment %>
+  </div>
 </div>

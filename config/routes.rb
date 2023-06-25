@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   resources :posts do
     resources :comments, shallow: true do
-      resources :comments, module: :comments, as: :replies, only: [:create, :edit, :update, :destroy]
+      resources :comments, module: :comments, as: :replies, only: [:create, :edit, :update]
     end
   end
   
