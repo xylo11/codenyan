@@ -7,10 +7,27 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
-    if @comment.save
-      redirect_to @comment.commentable, notice: 'Comment was successfully created.'
-    else
-      redirect_to @comment.commentable, alert: 'Error creating comment.'
+    respond_to do |format|
+      if @comment.save
+        format.js { }
+        format.html { redirect_to @comment.commentable, notice: 'Comment was successfully created.' }
+      else
+        @comment.errors.full_messages
+        format.html { redirect_to @comment.commentable, alert: 'Error creating comment.' }
+        format.js { render :create_failed }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @comment.update(comment_params)
+        format.js { }
+        format.html { redirect_to @comment.commentable, notice: 'Comment was successfully updated.' }
+      else
+        format.html { render :edit, alert: 'Error updating comment.' }
+        format.js { render :update_failed }
+      end
     end
   end
 

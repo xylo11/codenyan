@@ -1,7 +1,6 @@
-<%= form_with(model: [post, Comment.new], local: true) do |form| %>
+<%= form_with(model: [@commentable, Comment.new], remote: true, html: { class: "new_comment" }) do |form| %>
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= render 'layouts/ckeditor', form: form, field_name: :content %>
   </div>
 
   <div class="actions">

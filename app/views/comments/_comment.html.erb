@@ -1,8 +1,11 @@
 <div class="comment">
   <strong><%= comment.user.username %></strong> said:
   <p><%= comment.content %></p>
-  <% if user_signed_in? && current_user == comment.user %>
-    <%= link_to 'Edit', edit_post_comment_path(comment.post, comment) %> |
-    <%= link_to 'Delete Comment', [comment.post, comment], method: :delete %>
+  <% if comment.commentable.is_a?(Post) %>
+    <%= link_to 'Edit', edit_comment_path(comment) %> |
+    <%= link_to 'Delete Comment', comment_path(comment), method: :delete %>
+  <% else %>
+    <%= link_to 'Edit', edit_comment_comment_path(comment.commentable, comment) %> |
+    <%= link_to 'Delete Comment', comment_comment_path(comment.commentable, comment), method: :delete %>
   <% end %>
 </div>

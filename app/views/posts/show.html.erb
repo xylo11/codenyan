@@ -17,14 +17,12 @@
   </div>
   <%= link_to '投稿削除', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-  <%# The comment form, to be implemented later %>
   <div class="comment-form">
     <h3>Post a Comment</h3>
     <%= render 'comments/form', comment: Comment.new, post: @post %>
   </div>
 
-  <%# The comments list, to be implemented later %>
-  <div class="comments-list">
+  <div class="comments-list" id="comments">
     <h3>Comments</h3>
     <%= render @post.comments %>
   </div>
