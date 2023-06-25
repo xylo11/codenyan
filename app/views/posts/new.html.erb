@@ -1,37 +1,7 @@
 <div class="post-form">
   <h1>Create a post</h1>
 
-  <%= form_with(model: @post, local: true) do |form| %>
-    <% if @post.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-        <ul>
-          <% @post.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="post-park">
-      <%= form.label :park_id, "Park" %>
-      <%= form.collection_select :park_id, Park.all, :id, :name, {}, { class: "form-control", id: "post-park-dropdown" } %>
-    </div>
-
-    <div class="post-title">
-      <%= form.text_area :title, placeholder: 'Title', rows: 1, maxlength: 300, id: 'title-input' %>
-      <span id="title-count">0/300</span>
-    </div>
-
-    <div class="post-field" style="width: 800px;">
-      <%= form.text_area :content, id: 'editor', class: 'post-textarea' %>
-    </div>
-
-    <div class="actions post-create">
-      <%= form.submit 'Post', class: 'post-btn' %>
-    </div>
-  <% end %>
+  <%= render 'form', post: @post %>
 
   <%= link_to 'Home', root_path %>
 </div>

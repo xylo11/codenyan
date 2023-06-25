@@ -1,32 +1,29 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
+<%= form_with(model: @post, local: true) do |form| %>
+  <% if @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= pluralize(@post.errors.count, "error") %> 投稿の保存に失敗しました</h2>
 
       <ul>
-        <% post.errors.full_messages.each do |message| %>
+        <% @post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="post-park">
     <%= form.label :park_id, "Park" %>
     <%= form.collection_select :park_id, Park.all, :id, :name, {}, { class: "form-control", id: "post-park-dropdown" } %>
   </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="post-title">
+    <%= form.text_area :title, placeholder: 'Title', rows: 1, maxlength: 300, id: 'title-input' %>
+    <span id="title-count">0/300</span>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
+  <%= render 'layouts/ckeditor', form: form, field_name: :content %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions post-create">
+    <%= form.submit 'Post', class: 'post-btn' %>
   </div>
 <% end %>
