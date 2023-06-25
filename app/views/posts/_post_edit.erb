@@ -1,0 +1,19 @@
+<%= form_with(model: post, local: true, html: { class: "edit_post", id: "edit_post_#{post.id}" }) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render 'layouts/ckeditor', form: form, field_name: :content %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

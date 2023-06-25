@@ -6,9 +6,16 @@
     </p>
   </div>
   <h1><%= @post.title %></h1>
-  <div class="post-textarea">
-    <%= markdown(@post.content) %>
+  <div class="posted-textarea" id="post-<%= @post.id %>">
+    <div class="content-display">
+      <%= markdown(@post.content) %>
+      <%= link_to 'Edit', '#', class: 'toggle-edit-form' %>
+    </div>
+    <div class="edit-form" style="display: none;">
+      <%= render 'post_edit', post: @post %>
+    </div>
   </div>
+  <%= link_to '投稿削除', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
   <%# The comment form, to be implemented later %>
   <div class="comment-form">
@@ -22,6 +29,5 @@
     <%= render @post.comments %>
   </div>
 
-  <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
   <%= link_to 'Back', posts_path %>
 </div>

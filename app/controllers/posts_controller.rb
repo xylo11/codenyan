@@ -23,10 +23,17 @@ class PostsController < ApplicationController
   end
   
   def update
+    @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.js
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.js
+      end
     end
   end
 
