@@ -9,20 +9,19 @@
   <div class="post-textarea">
     <%= markdown(@post.content) %>
   </div>
-</div>
 
-<%# The comment form, to be implemented later %>
-<div class="comment-form">
-  <h3>Post a Comment</h3>
-  <%= render 'comments/form', comment: Comment.new, post: @post %>
-</div>
+  <%# The comment form, to be implemented later %>
+  <div class="comment-form">
+    <h3>Post a Comment</h3>
+    <%= render 'comments/form', comment: Comment.new, post: @post %>
+  </div>
 
-<%# The comments list, to be implemented later %>
-<div class="comments-list">
-  <h3>Comments</h3>
-  <%= render @post.comments %>
-</div>
+  <%# The comments list, to be implemented later %>
+  <div class="comments-list">
+    <h3>Comments</h3>
+    <%= render @post.comments %>
+  </div>
 
-<%= link_to 'Edit', edit_park_path(@post.park) %> |
-<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Back', posts_path %>
+</div>

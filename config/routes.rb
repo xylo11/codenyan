@@ -5,14 +5,19 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :users, only: [:show]
   resource :user_profile, only: [:edit, :update]
-  resources :posts, only: [:new, :create, :show] do
-    resources :comments, only: [:create, :destroy]
+  
+  resources :posts do
+    resources :comments, shallow: true do
+      resources :comments, module: :comments, as: :replies, only: [:create, :edit, :update, :destroy]
+    end
   end
+  
   resources :parks do
     member do
       post :join
       delete :leave
     end
   end
+  
   get '/search', to: 'application#search'
 end
