@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :park_users
   has_many :parks, through: :park_users
   has_many :created_parks, class_name: 'Park', foreign_key: 'user_id'
+  has_many :posts
+  has_many :comments
 
   private
 

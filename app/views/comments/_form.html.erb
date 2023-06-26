@@ -1,0 +1,10 @@
+<%= form_with(model: comment.new_record? ? [@commentable, comment] : comment, remote: true, html: { class: "edit_comment_form" }) do |form| %>
+  <div class="field-comment-form">
+    <%= render 'layouts/ckeditor', form: form, field_name: :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+    <%= link_to 'Cancel', '#', class: 'cancel_edit_comment' %>
+  </div>
+<% end %>

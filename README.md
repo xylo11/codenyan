@@ -62,7 +62,6 @@
 | downvotes         | integer    | default: 0 |                   |
 | user_id           | references | false      | foreign_key: true |
 | post_id           | references | false      | foreign_key: true |
-| parent_comment_id | integer    |            |                   |
 
 - belongs_to :user
 - belongs_to :post

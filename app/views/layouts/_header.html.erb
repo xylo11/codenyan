@@ -18,7 +18,7 @@
         <div class="dropdown-section-title">OTHER</div>
         <% if user_signed_in? %>
           <%= link_to 'ユーザー設定', edit_user_registration_path, class: 'dropdown-item' %>
-          <%= link_to 'プロフィール', edit_user_profile_path, class: 'dropdown-item' %>
+          <%= link_to 'プロフィール設定', edit_user_profile_path, class: 'dropdown-item' %>
         <% end %>
         <%= link_to 'Home', root_path, class: 'dropdown-item' %>
       </div>
@@ -40,7 +40,7 @@
         <% else %>
           <%= image_tag 'default_avatar.png', alt: "Default avatar" %>
         <% end %>
-        <span><%= current_user.user_profile.nickname %></span>
+        <span><%= current_user.username %></span>
       <% else %>
         <%= image_tag 'default_avatar.png', alt: "Guest avatar" %>
         <span>Guest</span>

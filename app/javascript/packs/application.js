@@ -1,24 +1,41 @@
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
+import $ from 'jquery';
+window.$ = $;
+window.jQuery = $;
 
-require("@rails/ujs").start()
+import Rails from "@rails/ujs";
+Rails.start();
+
 // require("turbolinks").start()  // コメントアウトされています
-require("@rails/activestorage").start()
-require("channels")
-//= require jquery
-//= require jquery_ujs
-
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
+require("@rails/activestorage").start();
+require("channels");
+require("packs/post_park_dropdown");
 
 $.ajaxSetup({
   headers: {
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
   }
+});
+
+import ClassicEditor from './ckeditor.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const editorElements = document.querySelectorAll('.post-textarea');
+  const editorInstances = [];
+
+  editorElements.forEach((editorElement) => {
+    ClassicEditor
+      .create(editorElement)
+      .then((editor) => {
+        editorInstances.push(editor);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  });
+
+  document.addEventListener('ajax:success', () => {
+    editorInstances.forEach((editor) => {
+      editor.setData('');
+    });
+  });
 });

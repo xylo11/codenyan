@@ -1,0 +1,99 @@
+.user-detail {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 30px;
+
+  .posts {
+    width: 640px;
+    margin-top: -5px;
+    margin-right: 20px;
+
+    .post {
+      border: 1px solid #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      height: 300px;
+      overflow-y: auto;
+      background-color: #000000be;
+
+      .post-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom:1px solid #ffffff;
+        box-sizing: border-box;
+
+        .post-park,
+        .post-user {
+          text-decoration: none;
+          color: white;
+          margin-bottom: 10px;
+        }
+      }
+
+      .post-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .post-content {
+        font-size: 16px;
+      }
+
+      .comments {
+        h3 {
+          margin-top: 20px;
+        }
+
+        .comment {
+          border-top: 1px solid #ccc;
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+
+  .profile {
+    width: 300px;
+    height: 600px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #000000be;
+
+    .avatar {
+      width: 100%;
+      height: auto;
+    }
+
+    .nickname {
+      font-size: 24px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .username {
+      font-size: 20px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+    }
+  }
+}

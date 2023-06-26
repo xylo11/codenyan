@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const dropdownContent = document.querySelector('#dropdown-content');
 
   dropdownButton.addEventListener('click', function(event) {
-    event.stopPropagation();  // 追加
+    event.stopPropagation();
     if (dropdownContent.style.display === "none") {
       dropdownContent.style.display = "block";
     } else {
@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  dropdownContent.addEventListener('click', function(event) {  // 追加
-    event.stopPropagation();  // 追加
+  dropdownContent.addEventListener('click', function(event) {
+    event.stopPropagation();
   });
 
   window.addEventListener('click', function(event) {

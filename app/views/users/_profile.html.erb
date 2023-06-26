@@ -1,0 +1,10 @@
+<div class="profile">
+  <%= image_tag user.user_profile.avatar.attached? ? user.user_profile.avatar : 'default_avatar.png', class: "avatar" %>
+  <h2 class="nickname"><%= user.user_profile.nickname %></h2>
+  <p class="username"><%= user.username %></p>
+
+  <div class="buttons">
+    <button class="follow-btn">Follow</button>
+    <button class="talk-btn">Talk</button>
+  </div>
+</div>
