@@ -104,11 +104,12 @@ img {
   color: black;
 }
 
-.comment-wrapper {
-  border: 1px solid #cecece;
-  padding: 10px;
-}
-
 .field-comment-form {
   color: #000;
+}
+
+.comment_content {
+  width: 800px;
+  border: 1px solid #cecece;
+  padding: 10px;
 }
