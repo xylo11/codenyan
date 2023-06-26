@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   resource :user_profile, only: [:edit, :update]
   
   resources :posts do
-    resources :comments, shallow: true do
-      resources :comments, module: :comments, as: :replies, only: [:create, :edit, :update]
-    end
+    resources :comments, shallow: true
   end
   
   resources :parks do
