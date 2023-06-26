@@ -1,12 +1,14 @@
 $(document).ready(function() {
-  $(".edit_comment").click(function(e) {
+  // Edit form toggle
+  $(document).on("click", ".edit_comment", function(e) {
     e.preventDefault();
     var commentDiv = $(this).closest(".comment");
     commentDiv.find(".comment_content").hide();
     commentDiv.find(".edit_comment_form").show();
   });
 
-  $(".cancel_edit_comment").click(function(e) {
+  // Cancel edit
+  $(document).on("click", ".cancel_edit_comment", function(e) {
     e.preventDefault();
     var commentDiv = $(this).closest(".comment");
     commentDiv.find(".edit_comment_form").hide();
