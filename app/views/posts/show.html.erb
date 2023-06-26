@@ -24,7 +24,11 @@
 
   <div class="comments-list" id="comments">
     <h3>Comments</h3>
-    <%= render @post.comments %>
+    <% @post.comments.each do |comment| %>
+      <div class="comment-wrapper">
+        <%= render partial: 'comments/comment', locals: { comment: comment } %>
+      </div>
+    <% end %>
   </div>
 
   <%= link_to 'Back', posts_path %>
