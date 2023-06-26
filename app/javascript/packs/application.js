@@ -19,11 +19,23 @@ $.ajaxSetup({
 import ClassicEditor from './ckeditor.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const editorElement = document.querySelector('#editor');
-  if (editorElement) {
-    ClassicEditor.create(editorElement)
+  const editorElements = document.querySelectorAll('.post-textarea');
+  const editorInstances = [];
+
+  editorElements.forEach((editorElement) => {
+    ClassicEditor
+      .create(editorElement)
+      .then((editor) => {
+        editorInstances.push(editor);
+      })
       .catch(error => {
         console.error(error);
       });
-  }
+  });
+
+  document.addEventListener('ajax:success', () => {
+    editorInstances.forEach((editor) => {
+      editor.setData('');
+    });
+  });
 });
