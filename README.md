@@ -1,3 +1,17 @@
+# **アプリケーション名**
+![Image from Gyazo](https://i.gyazo.com/0ecd17fdfb4c6e6f2dbe9cf54d71fe0c.png)
+
+---
+# **アプリケーション概要**
+- ITエンジニア向けのオンライン掲示板型SNSです。
+- エラーや開発に悩んだときに質問したり、自分の経験をアウトプットできます。
+- またITエンジニアが集まるので業界のトレンド調査ができます
+---
+# **機能について**
+- cleditorを導入した投稿機能
+![Image from Gyazo](https://i.gyazo.com/b0f9229f87403ce8e2c342ddcac9620a.png)
+
+
 # **テーブル設計**
 
 ## users テーブル
