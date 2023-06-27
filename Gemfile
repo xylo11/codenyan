@@ -74,3 +74,5 @@ gem 'jquery-rails'
 gem 'redcarpet'
 
 gem 'ancestry'
+
+gem "aws-sdk-s3", require: false
