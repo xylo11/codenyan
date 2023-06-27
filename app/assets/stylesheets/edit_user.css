@@ -1,0 +1,85 @@
+.edit-user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:70px auto;
+  padding:40px;
+  width:420px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.637);
+}
+
+#edit_user {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+}
+
+#edit_user .field {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 380px;
+}
+
+.edit-user-form input[type="email"],
+.edit-user-form input[type="password"] {
+  width: 100%;
+  padding:20px;
+  margin-bottom:10px;
+  font:20px/1.25 'Alef';
+}
+
+.edit-user-form input[type="email"],
+.edit-user-form input[type="password"] {
+  width: 100%;
+  padding:15px;
+  margin-bottom:10px;
+  font:20px/1.25 'Alef';
+}
+
+.actions .update-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  width: 150px;
+  background-color: #324982c3;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.actions .update-button:hover {
+  background-color: #31509fc3;
+}
+
+.actions .update-button:active {
+  background-color: #2148acc3;
+}
+
+.edit-user-form .sign-up-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  width: 150px;
+  background-color: #324982c3;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.edit-user-form .sign-up-link:hover {
+  background-color: #31509fc3;
+}
+
+.edit-user-form .sign-up-link:active {
+  background-color: #2148acc3;
+}
