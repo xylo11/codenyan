@@ -59,3 +59,7 @@
 .login-form .sign-up-link:active {
   background-color: #2148acc3;
 }
+
+.login-form #error_explanation {
+  color: #ff6565;
+}

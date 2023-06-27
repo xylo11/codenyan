@@ -5,7 +5,7 @@
   justify-content: center;
   margin:70px auto;
   padding:40px;
-  width:420px;
+  width:700px;
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.637);
 }
@@ -76,10 +76,24 @@
   border-radius: 4px;
 }
 
-.edit-user-form .sign-up-link:hover {
-  background-color: #31509fc3;
+.edit-user-form .back-link {
+  margin-top: 30px;
+  font-size: 20px
 }
 
-.edit-user-form .sign-up-link:active {
-  background-color: #2148acc3;
+.edit-user-form .field_with_errors {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 380px;
+}
+
+.edit-user-form .field_with_errors input[type="email"],
+.edit-user-form .field_with_errors input[type="password"]{
+  background-color: rgba(255, 133, 133, 0.691);
+}
+
+.edit-user-form #error_explanation {
+  color: #ff6565;
 }
