@@ -2,6 +2,12 @@
   <h1>Codenyan</h1>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="login-error-field">
+      <% if flash[:alert] %>
+        <p class="alert"><%= flash[:alert] %></p>
+      <% end %>
+    </div>
+
     <div class="field">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
     </div>
