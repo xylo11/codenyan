@@ -5,7 +5,7 @@
   justify-content: center;
   margin:70px auto;
   padding:40px;
-  width:420px;
+  width:700px;
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.637);
 }
@@ -75,6 +75,20 @@
 
 .sign-up-form .login-link:active {
   background-color: #2148acc3;
+}
+
+.sign-up-form .field_with_errors {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 380px;
+}
+
+.sign-up-form .field_with_errors input[type="text"],
+.sign-up-form .field_with_errors input[type="email"],
+.sign-up-form .field_with_errors input[type="password"]{
+  background-color: rgba(255, 133, 133, 0.691);
 }
 
 .sign-up-form #error_explanation {
