@@ -10,12 +10,12 @@
     </div>
 
     <div class="field">
-      <%= form.label :intro %>
+      <%= form.label :introduction %>
       <%= form.text_area :intro %>
     </div>
 
     <div class="field">
-      <%= form.label :avatar %>
+      <%= form.label :avatar, "Select Avatar JPEG or PNG | Max 1MB" %>
       <%= form.file_field :avatar, onchange: "previewAvatar(this)" %>
       <div id="current-avatar-preview">
         <% if @user_profile.avatar.attached? %>

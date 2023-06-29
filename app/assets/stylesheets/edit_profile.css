@@ -32,7 +32,7 @@
 .actions .update-profile-button {
   display: inline-block;
   padding: 10px 20px;
-  margin-top: 10px;
+  margin-top: 30px;
   width: 250px;
   background-color: #324982c3;
   color: #ffffff;
@@ -64,4 +64,14 @@
 
 .edit-profile-form #error_explanation {
   color: #ff6565;
+}
+
+#current-avatar-preview img {
+  border-radius: 50%;
+  margin-top: 30px;
+}
+
+#new-avatar-preview img {
+  border-radius: 50%;
+  margin-top: 30px;
 }
