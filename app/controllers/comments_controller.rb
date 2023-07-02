@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     respond_to do |format|
       if @comment.save
-        format.js { }
+        format.js {}
         format.html { redirect_to @comment.commentable, notice: 'Comment was successfully created.' }
       else
         @comment.errors.full_messages
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.js { }
+        format.js {}
         format.html { redirect_to @comment.commentable, notice: 'Comment was successfully updated.' }
       else
         format.html { render :edit, alert: 'Error updating comment.' }
@@ -44,21 +44,22 @@ class CommentsController < ApplicationController
   end
 
   private
-    def set_commentable
-      resource, id = request.path.split('/')[1, 2]
-      @commentable = resource.singularize.classify.constantize.find(id)
-    end
 
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
+  def set_commentable
+    resource, id = request.path.split('/')[1, 2]
+    @commentable = resource.singularize.classify.constantize.find(id)
+  end
 
-    def comment_params
-      params.require(:comment).permit(:content)
-    end
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
-    def correct_user
-      @comment = current_user.comments.find_by(id: params[:id])
-      redirect_to comments_path, notice: "Not authorized to edit this comment" if @comment.nil?
-    end
+  def comment_params
+    params.require(:comment).permit(:content)
+  end
+
+  def correct_user
+    @comment = current_user.comments.find_by(id: params[:id])
+    redirect_to comments_path, notice: 'Not authorized to edit this comment' if @comment.nil?
+  end
 end
