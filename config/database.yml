@@ -6,7 +6,7 @@ development:
   <<: *default
   adapter: mysql2
   username: root
-  password:
+  password: 
   host: localhost
   database: codenyan_development
 
@@ -14,8 +14,8 @@ test:
   <<: *default
   adapter: mysql2
   username: root
-  password:
-  host: localhost
+  password: password
+  host: mysql
   database: codenyan_test
 
 production:
