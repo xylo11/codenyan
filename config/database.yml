@@ -9,6 +9,7 @@ development:
   password: 
   host: localhost
   database: codenyan_development
+  socket: /tmp/mysql.sock
 
 test:
   <<: *default
