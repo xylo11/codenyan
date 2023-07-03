@@ -22,6 +22,10 @@
 - ## ユーザー登録機能
 ![Image from Gyazo](https://i.gyazo.com/69402ff417f60af2be5a77d578879af0.gif)
 <br><br>
+<br><br>
+
+- ## 入力に不備がある場合エラーメッセージに加えて該当入力欄を赤く表示します
+![Image from Gyazo](https://i.gyazo.com/93cbd26f4717e765c6c71ce16be3b0b3.gif)
 
 - ## ユーザープロフィール編集機能
 ![Image from Gyazo](https://i.gyazo.com/9045f24969f2245d0cd3ce8177d84031.gif)
@@ -39,6 +43,7 @@
 ---
 
 <br><br>
+
 # **テーブル設計**
 
 ## users テーブル
