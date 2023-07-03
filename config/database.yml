@@ -6,7 +6,7 @@ development:
   <<: *default
   adapter: mysql2
   username: root
-  password: 
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   host: localhost
   database: codenyan_development
   socket: /tmp/mysql.sock
@@ -15,9 +15,10 @@ test:
   <<: *default
   adapter: mysql2
   username: root
-  password: nil
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   host: localhost
   database: codenyan_test
+  socket: /tmp/mysql.sock
 
 production:
   <<: *default
