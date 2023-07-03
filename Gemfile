@@ -76,3 +76,5 @@ gem 'redcarpet'
 gem 'ancestry'
 
 gem "aws-sdk-s3", require: false
+
+gem 'coveralls', require: false
