@@ -77,4 +77,5 @@ gem 'ancestry'
 
 gem "aws-sdk-s3", require: false
 
-gem 'coveralls', require: false
+gem 'simplecov', require: false, group: :test
+gem 'coveralls', require: false, group: :test
