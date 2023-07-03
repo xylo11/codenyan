@@ -36,13 +36,29 @@
 <br><br>
 
 - ## CKEditorを導入した投稿機能
-![Image from Gyazo](https://i.gyazo.com/b0f9229f87403ce8e2c342ddcac9620a.png)
+![Image from Gyazo](https://i.gyazo.com/a681066759afc30822ebd6af6c54ad64.gif)
+
+<br><br>
+
+- ## 投稿に対する非同期コメント機能
+![Image from Gyazo](https://i.gyazo.com/f6c5f6e371e77c0fd1809d2eafcd988f.gif)
+<br><br>
+
+---
+<br><br>
+
+## 今後の実装
+- 投稿及びコメントの非同期編集についてCKEditorを使用した状態でも入力欄に元のテキストが表示されるようにする
+- コメントに対するコメント機能(ネスト)
+- フォロー機能
+- チャット機能
+- いいね機能
+- 通知機能
+- ブックマーク機能
 
 <br><br>
 
 ---
-
-<br><br>
 
 # **テーブル設計**
 
