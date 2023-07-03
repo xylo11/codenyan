@@ -10,7 +10,9 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6 # replace with your Ruby version
+        ruby-version: 2.6.5 # replace with your Ruby version
+    - name: Update RubyGems
+      run: gem update --system
     - name: Install dependencies
       run: |
         gem install bundler
