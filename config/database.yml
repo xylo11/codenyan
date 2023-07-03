@@ -14,7 +14,7 @@ test:
   <<: *default
   adapter: mysql2
   username: root
-  password: ''
+  password: nil
   host: localhost
   database: codenyan_test
 
