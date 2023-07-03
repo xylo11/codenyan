@@ -52,6 +52,7 @@
   display: flex;
   align-items: center;
   margin-right: -40px;
+  color: #ffffff;
 }
 
 .header__profile span {
@@ -81,7 +82,7 @@
 }
 
 .select-label {
-  color: #fff;
+  color: #ffffff;
   font-size: 16px;
   text-align: center;
   padding-bottom: 3px;

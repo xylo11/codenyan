@@ -1,31 +1,44 @@
 # **README**
 
 ![code size](https://img.shields.io/github/languages/code-size/xylo11/codenyan) [![Coverage Status](https://coveralls.io/repos/github/xylo11/codenyan/badge.svg?branch=main)](https://coveralls.io/github/xylo11/codenyan?branch=main)
+<br><br>
 
 # **アプリケーション名**
 ![Image from Gyazo](https://i.gyazo.com/0ecd17fdfb4c6e6f2dbe9cf54d71fe0c.png)
 
 ---
+<br>
+
 # **アプリケーション概要**
 - ITエンジニア向けのオンライン掲示板型SNSです。
 - エラーや開発に悩んだときに質問したり、自分の経験をアウトプットできます。
-- またITエンジニアが集まるので業界のトレンド調査ができます
+- またITエンジニアが集まるので業界のトレンド調査ができます。
+<br><br>
 ---
+<br>
+
 # **機能について**
 
-- ユーザー登録機能
+- ## ユーザー登録機能
 ![Image from Gyazo](https://i.gyazo.com/69402ff417f60af2be5a77d578879af0.gif)
+<br><br>
 
-- ユーザープロフィール編集機能
+- ## ユーザープロフィール編集機能
 ![Image from Gyazo](https://i.gyazo.com/9045f24969f2245d0cd3ce8177d84031.gif)
+<br><br>
 
-- パーク(コミュニティ)機能
+- ## パーク(コミュニティ)機能
 ![Image from Gyazo](https://i.gyazo.com/900c31b5f461da11874584335e1ec144.gif)
+<br><br>
 
-- cleditorを導入した投稿機能
+- ## CKEditorを導入した投稿機能
 ![Image from Gyazo](https://i.gyazo.com/b0f9229f87403ce8e2c342ddcac9620a.png)
 
+<br><br>
 
+---
+
+<br><br>
 # **テーブル設計**
 
 ## users テーブル
@@ -175,6 +188,12 @@ belongs_to :following, class_name: 'User'
 
 - belongs_to :votable, polymorphic: true
 - belongs_to :user
+
+<br><br>
+
+---
+
+<br><br>
 
 # **ER図**
 
