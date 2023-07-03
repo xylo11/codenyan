@@ -1,5 +1,6 @@
 # **README**
 
+![code size](https://img.shields.io/github/languages/code-size/xylo11/codenyan) [![Coverage Status](https://coveralls.io/repos/github/xylo11/codenyan/badge.svg?branch=main)](https://coveralls.io/github/xylo11/codenyan?branch=main)
 
 # **アプリケーション名**
 ![Image from Gyazo](https://i.gyazo.com/0ecd17fdfb4c6e6f2dbe9cf54d71fe0c.png)
