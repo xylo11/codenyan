@@ -14,8 +14,8 @@ test:
   <<: *default
   adapter: mysql2
   username: root
-  password: 
-  host: <%= ENV['CI'] ? 'mysql' : 'localhost' %>
+  password: ''
+  host: localhost
   database: codenyan_test
 
 production:
