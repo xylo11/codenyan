@@ -16,7 +16,7 @@ test:
   adapter: mysql2
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: localhost
+  host: <%= ENV['CI'] ? 'mysql' : 'localhost' %>
   database: codenyan_test
   socket: /tmp/mysql.sock
 
