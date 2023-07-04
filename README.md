@@ -17,6 +17,72 @@
 ---
 <br>
 
+# **URL**
+https://codenyan.onrender.com
+<br><br>
+
+---
+<br><br>
+
+# **テスト用アカウント**
+
+- Basic認証ID:pneko  
+- Basic認証パスワード0222  
+<テストユーザー1>・メールアドレス : test@example ・パスワード : test1234 ・ユーザー名 : test  
+<テストユーザー2>・メールアドレス : sample@example ・パスワード : sample1234 ・ユーザー名 : sample  
+<br><br>
+
+---
+<br><br>
+
+# **ご利用方法**
+
+- ## ヘッダーの各種機能  
+  ・アプリロゴをクリックするとトップページへ遷移します。  
+  ・Select Optionと記載されているプルダウンメニューから各ページへ遷移します。  
+  ・検索ボックス(表示のみ)  
+  ・Talkアイコン、通知アイコン(表示のみ)  
+  ・アバター画像とニックネームの表示  
+  ・非ログイン時(新規登録、ログイン)、ログイン時(登録情報編集、プロフィール、ログアウト)  
+<br>
+
+- ## パーク作成機能、参加機能
+  ・ヘッダーのプルダウンメニューよりパーク作成ができます。作成後参加することでプルダウンメニュー内に参加しているパークが追加されます。パークはコミュニティにに当たる機能で投稿時には必須となります。
+<br>
+
+- ## 投稿機能
+  ・トップページのCreate New Postより新規投稿画面へ遷移します。  
+  ・パークの選択、タイトル、本文を入力しPOSTボタンを押すことで投稿が出来ます。※すべての項目について空では投稿はできません。
+<br>
+
+- ## 投稿編集・削除機能
+  ・投稿完了後の投稿詳細画面にて投稿者本人であれば編集・削除をすることができます。
+<br>
+
+- ## コメント投稿機能
+  ・投稿詳細画面にて投稿に対してコメントする事ができます。
+<br><br>
+
+___
+<br><br>
+
+# **アプリケーションを作成した背景**
+自身のプログラミング勉強中未経験エンジニアをペルソナとして、プログラミングに関する問題解決や交流を目的に開発しました。  
+このアプリケーションではユーザーが自身のエラーについて投稿したり、学習したことをアウトプットすることでお互いに知識を共有しスキルアップすることが出来ます。
+
+<br><br>
+
+---
+<br><br>
+
+# **洗い出した要件**
+https://docs.google.com/spreadsheets/d/1xWwkkOdEOcIoZQ4KHuAllP0BzuyIjPTQU5CY_IeLlBo/edit#gid=0
+
+<br><br>
+
+---
+<br><br>
+
 # **機能について**
 
 - ## ユーザー登録機能
@@ -42,6 +108,15 @@
 
 - ## 投稿に対する非同期コメント機能
 ![Image from Gyazo](https://i.gyazo.com/f6c5f6e371e77c0fd1809d2eafcd988f.gif)
+<br><br>
+
+---
+<br><br>
+
+# **工夫したポイント**
+- テキストエディタとしてCKEditorを導入し入力の柔軟性に力を入れました。
+- ヘッダーのプルダウンメニューにより各ページへの遷移を容易にしました。
+
 <br><br>
 
 ---
@@ -216,6 +291,46 @@ belongs_to :following, class_name: 'User'
 
 <br><br>
 
-# **ER図**
+# **データベース設計**
 
 [![Image from Gyazo](https://i.gyazo.com/f447a5fbc9642e67ff884f76e75641f0.png)](https://gyazo.com/f447a5fbc9642e67ff884f76e75641f0)
+
+<br><br>
+
+---
+
+<br><br>
+
+# **画面遷移図**
+
+![Image from Gyazo](https://i.gyazo.com/05aacc175c212551f818bb70f56635d2.png)
+
+<br><br>
+
+---
+<br><br>
+
+# **開発環境**
+・フロントエンド(HTML/CSS、JavaScript)  
+・バックエンド(Ruby on Rails、MySQL)  
+・インフラ（Render、S3)  
+・テスト（Rspec）  
+・テキストエディタ（Visual Studio Code）  
+・タスク管理（Github）  
+<br><br>
+
+---
+<br><br>
+
+# **ローカルでの動作方法**
+以下のコマンドを順に実行してください。  
+```
+% git clone https://github.com/xylo11/codenyan.git
+% cd codenyan
+% bundle install
+% rails db:create
+% rails db:migrate
+% yarn install
+```
+
+---
