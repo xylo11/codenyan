@@ -1,11 +1,29 @@
 <main class="content">
-    <% if user_signed_in? %>
-        <%= link_to '新規投稿', new_post_path, class: 'content__new-post-button' %>
-    <% end %>
-    <div class="content__post-list">
-        <div class="post">
-            <!-- Post content here -->
+  <% if user_signed_in? %>
+    <%= link_to '新規投稿', new_post_path, class: 'content__new-post-button' %>
+  <% end %>
+  <div class="content__post-list">
+    <% @posts.each do |post| %>
+      <div class="post">
+        <div class="posted-details">
+          <div class="posted-header">
+            <h2><%= link_to post.park.name, post.park %></h2>
+            <p class="posted-info">
+              Posted by <%= link_to post.user.username, post.user, class: "username" %> <%= time_ago_in_words(post.created_at) %> ago
+            </p>
+          </div>
+          <h1><%= post.title %></h1>
+          <div class="posted-textarea" id="post-<%= post.id %>">
+            <div class="content-display">
+              <%= markdown(post.content) %>
+              <%= link_to 'Edit', '#', class: 'toggle-edit-form' %>
+            </div>
+            <div class="edit-form" style="display: none;">
+              <%= render 'post_edit', post: post %>
+            </div>
+          </div>
         </div>
-        <!-- More posts -->
-    </div>
+      </div>
+    <% end %>
+  </div>
 </main>
