@@ -57,7 +57,7 @@
   flex-direction: column;
   align-items: center;
   text-align: left;
-  width: 75%;
+  width: 80vw;
   margin: 5px auto;
   border: 2px solid #9d9d9d;
   border-radius: 10px;
@@ -90,4 +90,14 @@ img {
 
 .posted-header .posted-info {
   margin-top: 30px;
+}
+
+.posted-textarea .content-display {
+  max-width: 70vw;
+  word-wrap: break-word;
+}
+
+code {
+  word-wrap: break-word; /* 長い単語を折り返す */
+  white-space: pre-wrap; /* スペースや改行を保持する */
 }
