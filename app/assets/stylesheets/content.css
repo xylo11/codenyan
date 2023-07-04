@@ -1,5 +1,5 @@
 .content {
-  margin: 5px;
+  margin-top: 10px;
 }
 
 .content__new-post-button {
@@ -13,9 +13,18 @@
   height: 60px;
   max-height: 100%;
   margin: 5px auto;
-  background-color: #000000be;
+  background-color: #324982c3;
   color: #ffffff;
   text-align: center;
   border-radius: 5px;
   border: none;
+  text-decoration: none;
+}
+
+.content__new-post-button:hover {
+  background-color: #31509fc3;
+}
+
+.content__new-post-button:active {
+  background-color: #2148acc3;
 }
