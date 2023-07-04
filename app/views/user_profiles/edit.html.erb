@@ -1,27 +1,27 @@
 <div class="edit-profile-form">
-  <h1>Edit Profile</h1>
+  <h1>プロフィール設定</h1>
 
   <%= form_with(model: @user_profile, local: true) do |form| %>
     <%= render 'user_profiles/errors', object: @user_profile %>
 
     <div class="field">
-      <%= form.label :nickname %>
+      <%= form.label :nickname, "ニックネーム" %>
       <%= form.text_field :nickname %>
     </div>
 
     <div class="field">
-      <%= form.label :introduction %>
+      <%= form.label :introduction,"自己紹介" %>
       <%= form.text_area :intro %>
     </div>
 
     <div class="field">
-      <%= form.label :avatar, "Select Avatar JPEG or PNG | Max 1MB" %>
+      <%= form.label :avatar, "アバター画像は JPEG か PNG | 最大 1MBまで" %>
       <%= form.file_field :avatar, onchange: "previewAvatar(this)" %>
       <div id="current-avatar-preview">
         <% if @user_profile.avatar.attached? %>
           <%= image_tag @user_profile.avatar.variant(resize_to_limit: [150, 150]), id: "current-avatar" %>
         <% else %>
-          <p>No current avatar</p>
+          <p>アバター画像がありません</p>
         <% end %>
       </div>
       <div id="new-avatar-preview"></div>

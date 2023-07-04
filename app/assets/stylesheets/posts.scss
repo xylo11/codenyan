@@ -1,5 +1,4 @@
-h1 {
-  color: #ffffff;
+.posted-details h1 {
   font-size: 45px;
 }
 
@@ -7,11 +6,10 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: black;
 }
 
 #error_explanation {
-  color: #ffffff;
+  color: #ff6565;
 }
 
 .post-park {
@@ -44,14 +42,12 @@ h1 {
 }
 
 .post-btn {
-  color: #000;
   background-color: #989898;
   border-bottom: 5px solid #cecece;
 }
 
 .post-btn:hover {
   margin-top: 3px;
-  color: #000;
   background: #898989;
   border-bottom: 2px solid #cecece;
 }
@@ -62,12 +58,11 @@ h1 {
   align-items: center;
   text-align: left;
   width: 75%;
-  margin: 0 auto;
+  margin: 5px auto;
   border: 2px solid #9d9d9d;
   border-radius: 10px;
   padding: 10px;
-  background-color: #000000be;
-  color: #000;
+  background-color: #ffffff;
 }
 
 .posted-details .posted-header {
@@ -75,7 +70,6 @@ h1 {
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  color: #ffffff;
 }
 
 .posted-details .posted-header h2 {
@@ -83,29 +77,9 @@ h1 {
   margin-left: 0;
 }
 
-.posted-details .posted-textarea {
-  color: #ffffff;
-}
-
-.comment-form h3 {
-  color: #ffffff;
-}
-
-.posted-details .comments-list {
-  color: #ffffff;
-}
-
 img {
   max-width: 100%;
   max-height: 100%;
-}
-
-.edit-form {
-  color: black;
-}
-
-.field-comment-form {
-  color: #000;
 }
 
 .comment_content {

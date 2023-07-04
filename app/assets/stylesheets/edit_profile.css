@@ -10,6 +10,10 @@
   background-color: rgba(0, 0, 0, 0.637);
 }
 
+.edit-profile-form h1 {
+  color: #ffffff;
+}
+
 .edit-profile-form input[type="text"] {
   width: 100%;
   padding:15px;
@@ -74,4 +78,28 @@
 #new-avatar-preview img {
   border-radius: 50%;
   margin-top: 30px;
+}
+
+.edit-profile-form label[for="user_profile_nickname"] {
+  color: #ffffff;
+}
+
+.edit-profile-form label[for="user_profile_introduction"] {
+  color: #ffffff;
+}
+
+.edit-profile-form label[for="user_profile_avatar"] {
+  color: #ffffff;
+}
+
+.edit-profile-form label[for="user_profile_nickname"] {
+  color: #ffffff;
+}
+
+#current-avatar-preview p {
+  color: #ffffff;
+}
+
+.edit-profile-form input[type="file"] {
+  color: #ffffff;
 }
