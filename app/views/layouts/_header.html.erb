@@ -10,8 +10,9 @@
         <button class="dropdown-button"><%= @current_park_name || "Home" %></button>
         <div id="dropdown-content" class="dropdown-content" style="display: none;">
           <input type="text" id="search" placeholder="Filter">
-          <div class="dropdown-section-title">YOUR PARKS</div>
+          <%= link_to '新規投稿', new_post_path, class: 'dropdown-item' %>
           <%= link_to 'パーク作成', new_park_path, class: 'dropdown-item' %>
+          <div class="dropdown-section-title">YOUR PARKS</div>
           <% if user_signed_in? %>
             <% current_user.parks.each do |park| %>
               <%= link_to park.name, park_path(park), class: 'dropdown-item' %>
