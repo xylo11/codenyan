@@ -118,7 +118,7 @@ https://docs.google.com/spreadsheets/d/1xWwkkOdEOcIoZQ4KHuAllP0BzuyIjPTQU5CY_IeL
 # **工夫したポイント**
 - テキストエディタとしてCKEditorを導入し入力の柔軟性に力を入れました。
 - ヘッダーのプルダウンメニューにより各ページへの遷移を容易にしました。
-- 全体のカラーを白と黒を基調にして落ち着いた雰囲気にしました。
+- シンプルな配色にこだわりました。
 <br><br>
 
 ---
