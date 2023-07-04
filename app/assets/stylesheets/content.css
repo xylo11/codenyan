@@ -28,3 +28,8 @@
 .content__new-post-button:active {
   background-color: #2148acc3;
 }
+
+.content__post-list .content-display {
+  max-height: 200px;
+  overflow: hidden;
+}
