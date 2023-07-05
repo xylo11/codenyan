@@ -1,5 +1,6 @@
 .content {
   margin-top: 10px;
+  height: auto;
 }
 
 .content__new-post-button {
@@ -32,9 +33,4 @@
   max-width: 70vw;
   overflow: hidden;
   word-wrap: break-word;
-}
-
-.content__post-list {
-  max-height: 70vh;
-  overflow: auto;
 }
