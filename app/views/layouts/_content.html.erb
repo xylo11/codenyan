@@ -12,7 +12,7 @@
               Posted by <%= link_to post.user.username, post.user, class: "username" %> <%= time_ago_in_words(post.created_at) %> ago
             </p>
           </div>
-          <h1><%= post.title %></h1>
+          <h2><%= post.title %></h2>
           <div class="posted-textarea" id="post-<%= post.id %>">
             <div class="content-display">
               <%= markdown(post.content) %>
