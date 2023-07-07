@@ -7,12 +7,14 @@
       <div class="post">
         <div class="posted-details">
           <div class="posted-header">
-            <h2><%= link_to post.park.name, post.park %></h2>
+            <h3><%= link_to post.park.name, post.park %></h3>
             <p class="posted-info">
               Posted by <%= link_to post.user.username, post.user, class: "username" %> <%= time_ago_in_words(post.created_at) %> ago
             </p>
           </div>
+          <div class="posted-title">
           <h2><%= post.title %></h2>
+          </div>
           <div class="posted-textarea" id="post-<%= post.id %>">
             <div class="content-display">
               <%= markdown(post.content) %>
