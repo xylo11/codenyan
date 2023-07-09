@@ -13,7 +13,7 @@
             </p>
           </div>
           <div class="posted-title">
-          <h2><%= post.title %></h2>
+          <h2><%= link_to post.title, post_path(post) %></h2>
           </div>
           <div class="posted-textarea" id="post-<%= post.id %>">
             <div class="content-display">

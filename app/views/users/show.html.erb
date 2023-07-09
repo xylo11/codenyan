@@ -6,7 +6,7 @@
           <%= link_to post.park.name, park_path(post.park), class: 'post-park' %>
           <span class="post-info">Posted by <%= link_to post.user.username, user_path(post.user), class: 'post-user' %> <%= time_ago_in_words(post.created_at) %> ago</span>
         </div>
-        <%= link_to post.title, post_path(post), class: 'post-title' %>
+        <h2><%= link_to post.title, post_path(post) %></h2>
         <p class="post-content"><%= truncate(post.content, length: 300) %></p>
 
         <div class="comments">
