@@ -18,10 +18,6 @@
           <div class="posted-textarea" id="post-<%= post.id %>">
             <div class="content-display">
               <%= markdown(post.content) %>
-              <%= link_to 'Edit', '#', class: 'toggle-edit-form' %>
-            </div>
-            <div class="edit-form" style="display: none;">
-              <%= render 'post_edit', post: post %>
             </div>
           </div>
         </div>
