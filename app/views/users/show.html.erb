@@ -7,7 +7,7 @@
           <span class="post-info">Posted by <%= link_to post.user.username, user_path(post.user), class: 'post-user' %> <%= time_ago_in_words(post.created_at) %> ago</span>
         </div>
         <h2><%= link_to post.title, post_path(post), class: "ustitle" %></h2>
-        <p class="post-content"><%= truncate(post.content, length: 300) %></p>
+        <p class="post-content"><%= markdown(truncate(post.content, length: 300)) %></p>
 
         <div class="comments">
           <h3>Comments</h3>
