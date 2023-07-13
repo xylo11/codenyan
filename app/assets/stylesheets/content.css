@@ -30,7 +30,8 @@
 }
 
 .content__post-list .content-display {
-  max-height: 200px;
+  min-height: 300px;
+  max-height: 300px;
   max-width: 70vw;
   overflow: hidden;
   word-wrap: break-word;
