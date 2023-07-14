@@ -1,13 +1,16 @@
-<h1>新規パーク作成</h1>
+<div class="new-park">
+  <h1>新規パーク作成</h1>
 
-<%= form_with(model: @park, local: true) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+  <%= form_with(model: @park, local: true) do |form| %>
+    <div class="new-park-form">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
 
-  <%= form.label :info %>
-  <%= form.text_area :info %>
+      <%= form.label :info %>
+      <%= form.text_area :info %>
+    </div>
+    <%= form.submit "作成" %>
+  <% end %>
 
-  <%= form.submit "作成" %>
-<% end %>
-
-<%= link_to "キャンセル", parks_path %>
+  <%= link_to "キャンセル", parks_path %>
+</div>
