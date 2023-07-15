@@ -8,8 +8,11 @@
 
       <%= form.label :info %>
       <%= form.text_area :info %>
+
+      <div class="submit-button">
+        <%= form.submit "作成" %>
+      </div>
     </div>
-    <%= form.submit "作成" %>
   <% end %>
 
   <%= link_to "キャンセル", parks_path %>
