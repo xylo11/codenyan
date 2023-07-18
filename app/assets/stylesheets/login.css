@@ -63,3 +63,11 @@
 .login-form #error_explanation {
   color: #ff6565;
 }
+
+.login-form h1 {
+  color: #ffffff;
+}
+
+.login-form .remenber-me {
+  color: #ffffff;
+}
