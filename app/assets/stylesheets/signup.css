@@ -94,3 +94,7 @@
 .sign-up-form #error_explanation {
   color: #ff6565;
 }
+
+.sign-up-form h1 {
+  color: #ffffff;
+}
