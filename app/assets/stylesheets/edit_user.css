@@ -97,3 +97,7 @@
 .edit-user-form #error_explanation {
   color: #ff6565;
 }
+
+.edit-user-form h2, .edit-user-form label, .edit-user-form i, .edit-user-form em {
+  color: #ffffff;
+}
