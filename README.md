@@ -1,7 +1,5 @@
 # **README**
 
-# ※申し訳ございません。renderの無料時間枠が終了してしまったためAWSへ移行中です 7/18 21:30頃より
-
 ![code size](https://img.shields.io/github/languages/code-size/xylo11/codenyan) 
 
 <!-- [![Coverage Status](https://coveralls.io/repos/github/xylo11/codenyan/badge.svg?branch=main)](https://coveralls.io/github/xylo11/codenyan?branch=main) -->
